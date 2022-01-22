@@ -30,5 +30,24 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
-    text-align: center;
+    text-align:left
+}
+.container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/*img {
+    max-width: 100%
+}
+*/
+.image {
+    flex-basis: 40%
+}
+
+.text {
+    font-size: 20px;
+    padding-left: 20px;
 }
