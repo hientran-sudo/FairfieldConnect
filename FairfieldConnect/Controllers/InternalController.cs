@@ -2,7 +2,7 @@
 
 namespace FairfieldConnect.Controllers
 {
-    public class Internal : Controller
+    public class InternalController : Controller
     {
         public IActionResult Index()
         {
