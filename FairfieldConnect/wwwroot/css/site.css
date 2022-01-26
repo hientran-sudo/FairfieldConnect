@@ -66,3 +66,15 @@ body {
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item1 {
+    padding: 20px;
+    font-size: 30px;
+    text-align: left
+}
