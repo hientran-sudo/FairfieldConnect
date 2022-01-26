@@ -14,8 +14,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-color:darkred;
+    margin-bottom: 60px;
+    background-color: darkred;
 }
 
 .grid-container {
@@ -50,4 +50,10 @@ body {
 .text {
     font-size: 20px;
     padding-left: 20px;
+}
+
+.bg {
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
 }
