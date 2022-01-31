@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using FairfieldConnect.Data;
+using FairfieldConnect.Areas.Identity.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("FairfieldConnectContextConnection");builder.Services.AddDbContext<FairfieldConnectContext>(options =>
     options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<FairfieldConnectUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -28,5 +30,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapRazorPages();
 app.Run();
