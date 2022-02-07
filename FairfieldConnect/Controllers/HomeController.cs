@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace FairfieldConnect.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
