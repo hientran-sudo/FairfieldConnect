@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FairfieldConnect.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class InternalController : Controller
     {
         public IActionResult Index()
