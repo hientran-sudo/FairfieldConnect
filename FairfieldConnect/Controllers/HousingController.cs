@@ -8,5 +8,9 @@ namespace FairfieldConnect.Controllers
         {
             return View();
         }
+        public IActionResult Reviews()
+        {
+            return View();
+        }
     }
 }
