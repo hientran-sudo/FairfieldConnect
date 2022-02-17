@@ -10,7 +10,7 @@ namespace FairfieldConnect.Controllers
         }
         public IActionResult Reviews()
         {
-            return RedirectToAction("Index","Reviews");
+            return RedirectToAction("Index", "Reviews");
         }
 
     }
