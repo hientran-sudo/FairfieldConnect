@@ -12,5 +12,13 @@ namespace FairfieldConnect.Controllers
         {
             return View();
         }
+        public IActionResult Find()
+        {
+            return View();
+        }
+        public IActionResult List()
+        {
+            return View();
+        }
     }
 }
