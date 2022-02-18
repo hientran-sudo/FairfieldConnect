@@ -6,7 +6,7 @@ namespace FairfieldConnect.Controllers.Housing.Find
     {
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Housing/Find/Index.cshtml");
         }
     }
 }
