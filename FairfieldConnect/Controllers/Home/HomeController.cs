@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace FairfieldConnect.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -22,6 +23,7 @@ namespace FairfieldConnect.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

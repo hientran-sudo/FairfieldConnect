@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Reviews Page";
+}
+<div class="card" style="width:1200px">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Units</th>
+            <th>Ratings</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>8</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>9</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>0</td>
+            <td>2.5</td>
+        </tr>
+        <tr>
+            <td>Blue Key</td>
+            <td>14</td>
+            <td>4.5</td>
+        </tr>
+        <tr>
+            <td>The Edge at Fairfield</td>
+            <td>30</td>
+            <td>4.8</td>
+        </tr>
+    </table>
+</div>
+
+<form asp-action="Add">
+    <button type="submit" class="btn btn-info"> Create Reviews </button>
+</form>
+

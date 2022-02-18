@@ -4,11 +4,14 @@ using FairfieldConnect.Data;
 using FairfieldConnect.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("FairfieldConnectContextConnection");builder.Services.AddDbContext<FairfieldConnectContext>(options =>
-    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<FairfieldConnectUser>(options => options.SignIn.RequireConfirmedAccount = true)
+var connectionString = builder.Configuration.GetConnectionString("FairfieldConnectContextConnection");
+builder.Services.AddDbContext<FairfieldConnectContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<FairfieldConnectUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<FairfieldConnectContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -29,6 +32,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Internal}/{action=Index}/{id?}");
 app.MapRazorPages();
 app.Run();
