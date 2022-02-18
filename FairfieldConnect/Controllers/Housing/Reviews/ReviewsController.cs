@@ -10,7 +10,7 @@ namespace FairfieldConnect.Controllers.Housing.Reviews
         }
         public IActionResult Add()
         {
-            return View("~/Views/Housing/Reviews/Index.cshtml");
+            return View("~/Views/Housing/Reviews/Add.cshtml");
         }
         //[HttpPost]
         //public IActionResult Add(Customer c)
