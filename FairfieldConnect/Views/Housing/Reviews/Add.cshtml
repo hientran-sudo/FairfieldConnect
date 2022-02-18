@@ -1,0 +1,38 @@
+﻿@*@model Review*@
+
+<h3>Add New Post</h3>
+<form asp-action="Add" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+     <div class="form-group">
+        <label @*asp-for="VendorID"*@>Vendor:</label>
+        <select @*asp-for="VendorID"*@class="form-control"
+                asp-items="@(new SelectList(ViewBag.Vendors, "VendorID", "Name"))">
+            <option value=""></option>
+        </select>
+        <span @*asp-validation-for="VendorID"*@ class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label @*asp-for=""*@>Title:</label>
+        <input type="text" @*asp-for=""*@ class="form-control" />
+        <span @*asp-validation-for="" *@class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label @*asp-for=""*@>Reviews:</label>
+        <input type="text" @*asp-for=""*@ class="form-control" />
+        <span @*asp-validation-for="" *@class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label @*asp-for=""*@>Ratings:</label>
+        <input type="text" @*asp-for=""*@ class="form-control" />
+        <span @*asp-validation-for="" *@class="text-danger"></span>
+    </div>
+
+    
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-info" />
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </div>
+</form>
+
+
