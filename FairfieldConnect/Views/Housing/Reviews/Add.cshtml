@@ -4,9 +4,9 @@
 <form asp-action="Add" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
      <div class="form-group">
-        <label @*asp-for="VendorID"*@>Vendor:</label>
+        <label @*asp-for="VendorID"*@>Landlord:</label>
         <select @*asp-for="VendorID"*@class="form-control"
-                asp-items="@(new SelectList(ViewBag.Vendors, "VendorID", "Name"))">
+                @*asp-items="@(new SelectList(ViewBag.Vendors, "VendorID", "Name"))"*@>
             <option value=""></option>
         </select>
         <span @*asp-validation-for="VendorID"*@ class="text-danger"></span>
