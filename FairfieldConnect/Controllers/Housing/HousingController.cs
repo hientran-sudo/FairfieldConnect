@@ -8,10 +8,7 @@ namespace FairfieldConnect.Controllers
         {
             return View();
         }
-        public IActionResult Reviews()
-        {
-            return RedirectToAction("Index", "Reviews");
-        }
+        
 
     }
 }
