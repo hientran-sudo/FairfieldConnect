@@ -50,6 +50,7 @@ body {
 .text {
     font-size: 20px;
     padding-left: 20px;
+    color:white;
 
 }
 
@@ -99,4 +100,8 @@ th, td {
 
 tr:hover {
     background-color: #D6EEEE;
+}
+
+label{
+    color: white;
 }
