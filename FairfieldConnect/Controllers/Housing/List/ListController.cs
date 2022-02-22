@@ -12,5 +12,9 @@ namespace FairfieldConnect.Controllers.Housing.List
         {
             return View("~/Views/Housing/List/Add.cshtml");
         }
+        public IActionResult Delete()
+        {
+            return View("~/Views/Housing/List/Delete.cshtml");
+        }
     }
 }
