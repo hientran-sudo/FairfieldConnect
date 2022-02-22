@@ -8,5 +8,9 @@ namespace FairfieldConnect.Controllers.Housing.Find
         {
             return View("~/Views/Housing/Find/Index.cshtml");
         }
+        public IActionResult Add()
+        {
+            return View("~/Views/Housing/Find/Add.cshtml");
+        }
     }
 }
