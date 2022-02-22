@@ -2,7 +2,7 @@
 
 namespace FairfieldConnect.Controllers.Housing.Reviews
 {
-    public class ReviewsController : Controller
+    public class ReviewController : Controller
     {
         public IActionResult Index()
         {
