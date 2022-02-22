@@ -6,11 +6,11 @@ namespace FairfieldConnect.Controllers.Housing.Reviews
     {
         public IActionResult Index()
         {
-            return View("~/Views/Housing/Reviews/Index.cshtml");
+            return View("~/Views/Housing/Review/Index.cshtml");
         }
         public IActionResult Add()
         {
-            return View("~/Views/Housing/Reviews/Add.cshtml");
+            return View("~/Views/Housing/Review/Add.cshtml");
         }
         //[HttpPost]
         //public IActionResult Add(Customer c)
