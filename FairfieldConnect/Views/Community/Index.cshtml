@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Community Page";
 }
 <body background="ff.jpg" class="bg">
@@ -7,7 +8,7 @@
     <div class="card">
             <img src="ff1.jpg" alt="" style="width:100%">
             <div class="container">
-                <h4><b><a asp-area="" asp-controller="" asp-action="Index">Social</a></b></h4> 
+                <h4><b><a asp-area="" asp-controller="Community" asp-action="Social">Social</a></b></h4> 
                 <p></p> 
             </div>
         </div>
@@ -16,7 +17,7 @@
     <div class="card">
             <img src="ff1.jpg" alt="" style="width:100%">
             <div class="container">
-                <h4><b><a asp-area="" asp-controller="" asp-action="Index">Clubs</a></b></h4> 
+                <h4><b><a asp-area="" asp-controller="Community" asp-action="Clubs">Clubs</a></b></h4> 
                 <p></p> 
             </div>
         </div>
@@ -25,11 +26,10 @@
     <div class="card">
             <img src="ff1.jpg" alt="" style="width:100%">
             <div class="container">
-                <h4><b><a asp-area="" asp-controller="" asp-action="Index">Events</a></b></h4> 
+                <h4><b><a asp-area="" asp-controller="Community" asp-action="Events">Events</a></b></h4> 
                 <p></p> 
             </div>
         </div>
   </div>
 </div>
 </body>
-
