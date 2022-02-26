@@ -116,9 +116,4 @@ a:hover {
     text-decoration: none;
 }
 
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: none;
-}
 
