@@ -18,9 +18,20 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Internal" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Housing" asp-action="Index">Housing</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Housing
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Housing" asp-action="Index">Housing</a>
+                        </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Tutoring" asp-action="Index">Tutoring</a>
                         </li>
@@ -54,7 +65,7 @@
 
                 <h4><b><a asp-area="" asp-controller="" asp-action=""></a></b></h4>
             </div>
-        </div>       
+        </div>
 
         <div class="container">
             &copy; 2022 - FairfieldConnect - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
