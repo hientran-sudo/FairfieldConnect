@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "List Page";
+}
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th> 
+            <th>Subject</th>
+            <th>Rate</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <td>Chem Tutor for Hire</td>
+                <td>I'm a PHD student available to tutor underclassmen. Let me teach you organic!</td>
+                <td>Chemistry</td>
+                <td>20$/hr</td>
+
+                <td>                     
+                        <a asp-controller="" asp-action="" class="btn btn-info"> Edit </a>
+                        <a asp-controller="TList" asp-action="Delete" class="btn btn-info"> Delete </a>
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
+<form asp-action="Add">
+    <button type="submit" class="btn btn-info"> Offer your tutoring skills! </button>
+</form>
+
