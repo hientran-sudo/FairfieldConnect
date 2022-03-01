@@ -1,0 +1,22 @@
+﻿.container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.name {
+    position: Right;
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.font {
+    font-size: 80%;
+    font-family: 'italic';
+}
