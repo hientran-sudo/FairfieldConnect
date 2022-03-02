@@ -15,19 +15,18 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: darkred;
+    background-color: white;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: auto auto;
-    background-color: grey;
     padding: 10px;
 }
 
 .grid-item {
     background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
     font-size: 30px;
     text-align:left
@@ -50,7 +49,6 @@ body {
 .text {
     font-size: 20px;
     padding-left: 20px;
-
 }
 
 .bg {
@@ -100,3 +98,22 @@ th, td {
 tr:hover {
     background-color: #D6EEEE;
 }
+
+a:link {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
