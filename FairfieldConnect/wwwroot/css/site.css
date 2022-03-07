@@ -116,4 +116,29 @@ a:hover {
     text-decoration: none;
 }
 
+.main_view {
+    width: 80%;
+    height: 25rem;
+}
+
+    .main_view img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.side_view {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .side_view img {
+        width: 9rem;
+        height: 7rem;
+        object-fit: cover;
+        cursor: pointer;
+        margin: 0.5rem;
+    }
+
 
