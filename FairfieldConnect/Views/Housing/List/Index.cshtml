@@ -69,10 +69,17 @@
                         <div class="side_view">
                             <img src="~/ff.jpg" onclick="change(this.src)">
                             <img src="~/ff1.jpg" onclick="change(this.src)">
-                            <img src="" onclick="change(this.src)">
-                            <img src="" onclick="change(this.src)">
+                            @*<img src="" onclick="change(this.src)">
+                            <img src="" onclick="change(this.src)">*@
                         </div>
                     </div>
+
+                     <button onclick="windowOpen()">
+      Open GeeksforGeeks
+    </button>
+    <button onclick="windowClose()">
+      Close GeeksforGeeks
+    </button>
                 </td>
                 <td>$500/month</td>
 
@@ -91,6 +98,19 @@
     <script type="text/javascript">
         const change = src => {
             document.getElementById('main').src = src
+        }
+         var Window;
+  
+        // Function that open the new Window
+        function windowOpen() {
+            Window = window.open(
+              "https://www.geeksforgeeks.org/",
+                "_blank", "width=400, height=450");
+        }
+  
+        // function that Closes the open Window
+        function windowClose() {
+            Window.close();
         }
     </script>
 </body>
