@@ -1,15 +1,15 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace FairfieldConnect.Controllers
+namespace FairfieldConnect.Controllers.Market.Sell
 {
-    public class MarketController : Controller
+    public class SellController : Controller
     {
+
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Market/Sell.cshtml");
         }
+
         public IActionResult Sell()
         {
             return View("~/Views/Market/sell.cshtml");
@@ -19,5 +19,6 @@ namespace FairfieldConnect.Controllers
         {
             return View("~/Views/Market/shop.cshtml");
         }
+
     }
 }

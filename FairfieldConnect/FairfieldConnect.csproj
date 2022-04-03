@@ -7,7 +7,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Market\NewFolder1\**" />
+    <Compile Remove="Controllers\Market\NewFolder2\**" />
+    <Compile Remove="Controllers\Market\NewFolder3\**" />
+    <Compile Remove="Controllers\Market\NewFolder\**" />
+    <Content Remove="Controllers\Market\NewFolder1\**" />
+    <Content Remove="Controllers\Market\NewFolder2\**" />
+    <Content Remove="Controllers\Market\NewFolder3\**" />
+    <Content Remove="Controllers\Market\NewFolder\**" />
+    <EmbeddedResource Remove="Controllers\Market\NewFolder1\**" />
+    <EmbeddedResource Remove="Controllers\Market\NewFolder2\**" />
+    <EmbeddedResource Remove="Controllers\Market\NewFolder3\**" />
+    <EmbeddedResource Remove="Controllers\Market\NewFolder\**" />
+    <None Remove="Controllers\Market\NewFolder1\**" />
+    <None Remove="Controllers\Market\NewFolder2\**" />
+    <None Remove="Controllers\Market\NewFolder3\**" />
+    <None Remove="Controllers\Market\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Market\Sell\Sell.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Market\Component.razor" />
+    <Content Remove="Views\Market\Index1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Market\building.jpg" />
+    <None Remove="Views\Market\store.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\sell.css" />
     <None Include="wwwroot\ff1.jpg" />
+    <None Include="wwwroot\images\Market_Images\typing.jpg" />
   </ItemGroup>
 
   <ItemGroup>
