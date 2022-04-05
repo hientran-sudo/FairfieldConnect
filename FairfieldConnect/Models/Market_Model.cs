@@ -22,6 +22,9 @@
             public Student Student { get; set; }
             public Category Category { get; set; }
 
+            public Thumbnail Thumbnail { get; set; }
+            public int ThumbnailID { get; set; }
+
         }
     }
 

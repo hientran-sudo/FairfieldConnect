@@ -1,4 +1,4 @@
-﻿namespace fairfieldconnect.models
+﻿namespace FairfieldConnect.Models
 {
     public class Events_model
     {
@@ -14,7 +14,8 @@
         public int Studentid { get; set; }
         public int Clubid { get; set; }
 
-
+        public Thumbnail Thumbnail { get; set; }
+        public int ThumbnailID { get; set; }
 
         public Student Student { get; set; }
         public Clubs_Model Clubs_Model { get; set; }

@@ -10,5 +10,7 @@
         public int StudentID { get; set; }
 
         public Student Student { get; set; }
+        public Thumbnail Thumbnail { get; set; }
+        public int ThumbnailID { get; set; }
     }
 }
