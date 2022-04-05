@@ -17,7 +17,6 @@ namespace FairfieldConnect.Controllers.Market
         {
             return View("~/Views/Market/shop.cshtml");
         }
-
-
+        
     }
 }
