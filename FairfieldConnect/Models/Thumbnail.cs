@@ -6,6 +6,10 @@
         public int Size { get; set; }
 
         public int HousingPostID { get; set; }
+
+        public int ThumbnailID { get; set; }  
+
+        public Thumbnail Thumbnail { get; set; }
         public HousingPost HousingPost { get; set; }
 
     }

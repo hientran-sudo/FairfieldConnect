@@ -1,4 +1,4 @@
-﻿/*namespace FairfieldConnect.Models
+﻿namespace FairfieldConnect.Models
 {
     public class Market_Model
     {
@@ -12,8 +12,8 @@
             public string Desc { get; set; }
             public double Price { get; set; }
             public string Location { get; set; }
-            public date created { get; set; }
-            public date modified { get; set; }
+            public DateTime created { get; set; }
+            public DateTime modified { get; set; }
 
             public int StudentID { get; set; }
             public int CategoryID { get; set; }
@@ -26,4 +26,4 @@
     }
 
 }
-*/
+
