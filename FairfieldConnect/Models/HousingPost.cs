@@ -11,10 +11,12 @@
         public int StudentID { get; set; }
         public int CategoryID { get; set; }
         public int LandlordID { get; set; }
+        public int ThumbnailID { get; set; }
 
         public Student Student { get; set; }
         public Category Category { get; set; }
         public Landlord Landlord { get; set; }
+        public Thumbnail Thumbnail { get; set; }
 
     }
 }
