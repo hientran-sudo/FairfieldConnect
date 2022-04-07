@@ -1,6 +1,6 @@
 namespace FairfieldConnect.Models
-    {
-    {
+{
+    
 
         namespace FairfieldConnect.Models
     {
@@ -27,5 +27,5 @@ namespace FairfieldConnect.Models
         }
     }
 
-
+}
 
