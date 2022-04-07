@@ -1,4 +1,8 @@
-﻿namespace FairfieldConnect.Models
+namespace FairfieldConnect.Models
+    {
+    {
+
+        namespace FairfieldConnect.Models
     {
         public class MarketPost
         {
