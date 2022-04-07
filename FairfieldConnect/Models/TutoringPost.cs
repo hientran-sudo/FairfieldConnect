@@ -1,7 +1,4 @@
-﻿namespace FairfieldConnect.Models
-{
-    public class TutoringPost
-    {
+﻿
         namespace FairfieldConnect.Models
     {
         public class TutoringPost
@@ -24,5 +21,5 @@
         }
     }
 
-}
-}
+
+

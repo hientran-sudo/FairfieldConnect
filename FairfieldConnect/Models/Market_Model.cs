@@ -1,9 +1,4 @@
 ﻿namespace FairfieldConnect.Models
-{
-    public class Market_Model
-    {
-
-        namespace FairfieldConnect.Models
     {
         public class MarketPost
         {
@@ -28,5 +23,5 @@
         }
     }
 
-}
+
 
