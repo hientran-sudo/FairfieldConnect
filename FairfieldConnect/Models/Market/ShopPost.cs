@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FairfieldConnect.Models.Market
+namespace FairfieldConnect.Models
 {
     public class ShopPost
     {
