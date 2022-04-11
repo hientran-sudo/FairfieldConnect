@@ -1,10 +1,16 @@
-﻿namespace FairfieldConnect.Models.Market
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FairfieldConnect.Models.Market
 {
     public class ShopPost
     {
         public int ShopPostID { get; set; }
+        [Required(ErrorMessage = "Please enter a title.")]
+        [StringLength(200)]
         public string Title { get; set; }
+        [Required(ErrorMessage = "Please enter a description.")]
         public string Desc { get; set; }
+        [Range(0.0, 1000000.0, ErrorMessage = "Price must be more than 0.")]
         public double Price { get; set; }
         public DateTime Created { get; set; }
 
