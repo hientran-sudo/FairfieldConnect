@@ -35,7 +35,7 @@ namespace FairfieldConnect.Controllers.Housing.List
             {
                 context.HousingPosts.Add(hp);
                 context.SaveChanges();
-                return RedirectToAction("List","Index");
+                return RedirectToAction("Index");
             }
             else
             {
