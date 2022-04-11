@@ -19,6 +19,11 @@ namespace FairfieldConnect.Controllers
 
             return View(hps);
         }
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
         [HttpPost]
         public IActionResult Add(HousingPost hp)
         {
