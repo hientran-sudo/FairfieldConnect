@@ -13,6 +13,9 @@ namespace FairfieldConnect.Models
         [Required(ErrorMessage = "Please enter a location.")]
         [StringLength(200)]
         public string Location { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Hosting")]
         public DateTime Hosting { get; set; }
 
         public int StudentID { get; set; }

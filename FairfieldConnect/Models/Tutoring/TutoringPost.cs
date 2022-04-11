@@ -15,6 +15,9 @@ namespace FairfieldConnect.Models
         public string Subject { get; set; }
         [Range(0.0, 1000000.0, ErrorMessage = "Rate must be more than 0.")]
         public double Rate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Created")]
         public DateTime Created { get; set; }
 
         public int StudentID { get; set; }

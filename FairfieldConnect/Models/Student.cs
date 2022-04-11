@@ -14,6 +14,9 @@ namespace FairfieldConnect.Models
         [Required(ErrorMessage = "Please enter an email.")]
         [StringLength(200)]
         public string Email { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Dob")]
         public DateTime Dob { get; set; }
         public string Address { get; set; }
 
