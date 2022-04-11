@@ -12,29 +12,28 @@ namespace FairfieldConnect.Controllers
         {
             context = ctx;
         }
-        public IActionResult Index(string id)
+        public IActionResult Index()
         {
 
-            IQueryable<HousingPost> query = context.HousingPosts;
-
-
-            var hps = query.OrderBy(hps => hps.HousingPostID).ToList();
+            var hps = context.HousingPosts.OrderBy(h=> h.HousingPostID).ToList();
 
             return View(hps);
         }
-        [HttpGet]
-        public IActionResult Add()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public IActionResult Add(HousingPost hps)
+        public IActionResult Add(HousingPost hp)
         {
-              context.HousingPosts.Add(hps);
-              context.SaveChanges();
-              return RedirectToAction("Index");          
+            if (ModelState.IsValid)
+            {
+                context.HousingPosts.Add(hp);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(hp);
+            }
         }
+        
 
     }
 }

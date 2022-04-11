@@ -1,38 +1,3 @@
-@*@{
-    ViewData["Title"] = "Housing Page";
-}
-<body background="ff.jpg" class="bg">
-<div class="row">
-  <div class="column">
-    <div class="card">
-            <img src="ff1.jpg" alt="" style="width:100%">
-            <div class="container">
-                <h4><b><a asp-area="" asp-controller="Review" asp-action="Index">Reviews</a></b></h4> 
-                <p></p> 
-            </div>
-        </div>
-  </div>
-  <div class="column">
-    <div class="card">
-            <img src="ff1.jpg" alt="" style="width:100%">
-            <div class="container">
-                <h4><b><a asp-area="" asp-controller="Find" asp-action="Index">Find a Room</a></b></h4> 
-                <p></p> 
-            </div>
-        </div>
-  </div>
-  <div class="column">
-    <div class="card">
-            <img src="ff1.jpg" alt="" style="width:100%">
-            <div class="container">
-                <h4><b><a asp-area="" asp-controller="List" asp-action="Index">List a Room</a></b></h4> 
-                <p></p> 
-            </div>
-        </div>
-  </div>
-</div>
-</body>*@
-
 @model List<HousingPost>
 @{
     ViewBag.Title = "Housing Posts";
@@ -74,7 +39,11 @@
     </div>
 </div>
 
+                
 
+    <form asp-action="Add">
+        <button type="submit" class="btn btn-info"> Create Listings </button>
+    </form>
 
                    @* <div class="container">
 
@@ -93,11 +62,7 @@
                     </div>*@
 
                     
-                
 
-    <form asp-action="Add">
-        <button type="submit" class="btn btn-info"> Create Listings </button>
-    </form>
 
    
 
