@@ -55,6 +55,18 @@ namespace FairfieldConnect.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Thumbnails",
+                columns: table => new
+                {
+                    ThumbnailID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Thumbnails", x => x.ThumbnailID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Clubs",
                 columns: table => new
                 {
@@ -221,7 +233,6 @@ namespace FairfieldConnect.Migrations
                     Desc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Hosting = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StudentID = table.Column<int>(type: "int", nullable: false),
                     ClubID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -232,52 +243,6 @@ namespace FairfieldConnect.Migrations
                         column: x => x.ClubID,
                         principalTable: "Clubs",
                         principalColumn: "ClubID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Events_Students_StudentID",
-                        column: x => x.StudentID,
-                        principalTable: "Students",
-                        principalColumn: "StudentID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Thumbnails",
-                columns: table => new
-                {
-                    ThumbnailID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ClubID = table.Column<int>(type: "int", nullable: false),
-                    EventID = table.Column<int>(type: "int", nullable: false),
-                    HousingPostID = table.Column<int>(type: "int", nullable: false),
-                    SellPostID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Thumbnails", x => x.ThumbnailID);
-                    table.ForeignKey(
-                        name: "FK_Thumbnails_Clubs_ClubID",
-                        column: x => x.ClubID,
-                        principalTable: "Clubs",
-                        principalColumn: "ClubID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Thumbnails_Events_EventID",
-                        column: x => x.EventID,
-                        principalTable: "Events",
-                        principalColumn: "EventID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Thumbnails_HousingPosts_HousingPostID",
-                        column: x => x.HousingPostID,
-                        principalTable: "HousingPosts",
-                        principalColumn: "HousingPostID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Thumbnails_SellPosts_SellPostID",
-                        column: x => x.SellPostID,
-                        principalTable: "SellPosts",
-                        principalColumn: "SellPostID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -295,11 +260,6 @@ namespace FairfieldConnect.Migrations
                 name: "IX_Events_ClubID",
                 table: "Events",
                 column: "ClubID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Events_StudentID",
-                table: "Events",
-                column: "StudentID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HousingPosts_CategoryID",
@@ -337,26 +297,6 @@ namespace FairfieldConnect.Migrations
                 column: "StudentID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Thumbnails_ClubID",
-                table: "Thumbnails",
-                column: "ClubID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Thumbnails_EventID",
-                table: "Thumbnails",
-                column: "EventID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Thumbnails_HousingPostID",
-                table: "Thumbnails",
-                column: "HousingPostID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Thumbnails_SellPostID",
-                table: "Thumbnails",
-                column: "SellPostID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TutoringPosts_CategoryID",
                 table: "TutoringPosts",
                 column: "CategoryID");
@@ -370,15 +310,6 @@ namespace FairfieldConnect.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ShopPosts");
-
-            migrationBuilder.DropTable(
-                name: "Thumbnails");
-
-            migrationBuilder.DropTable(
-                name: "TutoringPosts");
-
-            migrationBuilder.DropTable(
                 name: "Events");
 
             migrationBuilder.DropTable(
@@ -386,6 +317,15 @@ namespace FairfieldConnect.Migrations
 
             migrationBuilder.DropTable(
                 name: "SellPosts");
+
+            migrationBuilder.DropTable(
+                name: "ShopPosts");
+
+            migrationBuilder.DropTable(
+                name: "Thumbnails");
+
+            migrationBuilder.DropTable(
+                name: "TutoringPosts");
 
             migrationBuilder.DropTable(
                 name: "Clubs");

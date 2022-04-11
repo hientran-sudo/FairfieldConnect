@@ -159,9 +159,6 @@ namespace FairfieldConnect.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int>("StudentID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -170,8 +167,6 @@ namespace FairfieldConnect.Migrations
                     b.HasKey("EventID");
 
                     b.HasIndex("ClubID");
-
-                    b.HasIndex("StudentID");
 
                     b.ToTable("Events");
                 });
@@ -371,27 +366,7 @@ namespace FairfieldConnect.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ThumbnailID"), 1L, 1);
 
-                    b.Property<int>("ClubID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EventID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HousingPostID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SellPostID")
-                        .HasColumnType("int");
-
                     b.HasKey("ThumbnailID");
-
-                    b.HasIndex("ClubID");
-
-                    b.HasIndex("EventID");
-
-                    b.HasIndex("HousingPostID");
-
-                    b.HasIndex("SellPostID");
 
                     b.ToTable("Thumbnails");
                 });
@@ -603,15 +578,7 @@ namespace FairfieldConnect.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FairfieldConnect.Models.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Club");
-
-                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("FairfieldConnect.Models.HousingPost", b =>
@@ -677,41 +644,6 @@ namespace FairfieldConnect.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("FairfieldConnect.Models.Thumbnail", b =>
-                {
-                    b.HasOne("FairfieldConnect.Models.Club", "Club")
-                        .WithMany()
-                        .HasForeignKey("ClubID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FairfieldConnect.Models.Event", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FairfieldConnect.Models.HousingPost", "HousingPost")
-                        .WithMany()
-                        .HasForeignKey("HousingPostID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FairfieldConnect.Models.SellPost", "SellPost")
-                        .WithMany()
-                        .HasForeignKey("SellPostID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Club");
-
-                    b.Navigation("Event");
-
-                    b.Navigation("HousingPost");
-
-                    b.Navigation("SellPost");
                 });
 
             modelBuilder.Entity("FairfieldConnect.Models.TutoringPost", b =>
