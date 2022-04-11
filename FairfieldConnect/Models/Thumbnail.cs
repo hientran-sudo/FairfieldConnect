@@ -2,8 +2,7 @@
 {
     public class Thumbnail
     {
-        public int ThumbnailID { get; set; }
-        
+        public int ThumbnailID { get; set; }       
         
     }
 }
