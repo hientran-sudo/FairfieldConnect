@@ -1,4 +1,4 @@
-@model List<HousingPost>
+@model List<Student>
 @{
     ViewBag.Title = "Housing Posts";
 }
@@ -8,27 +8,27 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Address</th>
-                    <th>Rate</th>
-                    <th></th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Dob</th>
+                    @*<th></th>*@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var hp in Model)
+                @foreach (var s in Model)
                 {
                     <tr>
-                        <td>@hp.HousingPostID</td>
-                        <td>@hp.Title</td>
-                        <td>@hp.Desc</td>
-                        <td>@hp.Address</td>
-                        <td>@hp.Rate</td>
+                        <td>@s.StudentID</td>
+                        <td>@s.Name</td>
+                        <td>@s.Phone</td>
+                        <td>@s.Email</td>
+                        <td>@s.Dob</td>
 
                         <td>                           
                                @* <a asp-controller="Product" asp-action="Details" asp-route-id=@p.ProductID class="btn btn-info"> Details </a>
                                 <a asp-controller="Product" asp-action="Edit" asp-route-id=@p.ProductID class="btn btn-info"> Edit </a>*@
-                                <a asp-controller="" asp-action="Delete" asp-route-id="@hp.HousingPostID" class="btn btn-info"> Delete </a>
+                                <a asp-controller="" asp-action="Delete" asp-route-id="@s.StudentID" class="btn btn-info"> Delete </a>
 
                         </td>
                     </tr>

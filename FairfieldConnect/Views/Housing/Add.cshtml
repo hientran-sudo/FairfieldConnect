@@ -1,32 +1,38 @@
-﻿@model HousingPost
+﻿@model Student
 
 <h3>Add New Listing</h3>
 <form asp-action="Add" method="post" style="width:800px">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="form-group">
-        <label asp-for="Title">Title:</label>
-        <input type="text" asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title" class="text-danger"></span>
+        <label asp-for="Name">Name:</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Desc">Description:</label>
-        <input type="text" asp-for="Desc" class="form-control" />
-        @*<textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" name="text" placeholder="Enter content"></textarea>*@
-        <span asp-validation-for="Desc" class="text-danger"></span>
+        <label asp-for="Phone">Phone:</label>
+        <input type="text" asp-for="Phone" class="form-control" />
+        @*<textarea type="text" asp-for="Phone" class="form-control" rows="5" cols="60" name="text" placeholder="Enter content"></textarea>*@
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input type="text" asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dob">Dob:</label>
+        <input type="text" asp-for="Dob" class="form-control" />
+        <span asp-validation-for="Dob" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="Address">Address:</label>
         <input type="text" asp-for="Address" class="form-control" />
         <span asp-validation-for="Address" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Rate">Rate:</label>
-        <input type="text" asp-for="Rate" class="form-control" />
-        <span asp-validation-for="Rate" class="text-danger"></span>
     </div>
 
     <br />

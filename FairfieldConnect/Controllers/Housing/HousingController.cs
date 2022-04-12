@@ -14,10 +14,12 @@ namespace FairfieldConnect.Controllers
         }
         public IActionResult Index()
         {
+            if (context.Students != null) {
 
-            var hps = context.HousingPosts.OrderBy(h=> h.HousingPostID).ToList();
-
-            return View(hps);
+                var student = context.Students.OrderBy(s => s.StudentID).ToList();
+                return View(student);
+            }
+            return View();
         }
         [HttpGet]
         public IActionResult Add()
@@ -25,17 +27,17 @@ namespace FairfieldConnect.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(HousingPost hp)
+        public IActionResult Add(Student student)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && context.Students != null)
             {
-                context.HousingPosts.Add(hp);
+                context.Students.Add(student);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
             {
-                return View(hp);
+                return View(student);
             }
         }
         
