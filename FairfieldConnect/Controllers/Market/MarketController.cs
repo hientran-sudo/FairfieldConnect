@@ -12,12 +12,12 @@ namespace FairfieldConnect.Controllers
         }
         public IActionResult Sell()
         {
-            return View("~/Views/Market/sell.cshtml");
+            return View("~/Views/Market/Sell.cshtml");
 
         }
         public IActionResult Shop()
         {
-            return View("~/Views/Market/shop.cshtml");
+            return View("~/Views/Market/Shop.cshtml");
         }
     }
 }
