@@ -40,7 +40,35 @@ namespace FairfieldConnect.Controllers
                 return View(student);
             }
         }
-        
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (context.Students != null)
+            {
+                var s = context.Students.Find(id);
+                return View(s);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult Delete(Student s)
+        {
+            
+            if (context.Students != null)
+            {
+                context.Students.Remove(s);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
 
     }
 }
