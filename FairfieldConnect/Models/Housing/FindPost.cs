@@ -10,7 +10,8 @@ namespace FairfieldConnect.Models
         public string Title { get; set; }
         [Required(ErrorMessage = "Please enter a description.")]
         public string Desc { get; set; }
-        [Required(ErrorMessage = "Please enter an address.")]
+        [Required(ErrorMessage = "Please enter a location.")]
+        public string Location { get; set; }
         public int Rate { get; set; }
 
         public int StudentID { get; set; }

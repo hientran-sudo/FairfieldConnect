@@ -102,6 +102,28 @@ namespace FairfieldConnect.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryID = 1,
+                            Name = "Housing"
+                        },
+                        new
+                        {
+                            CategoryID = 2,
+                            Name = "Tutoring"
+                        },
+                        new
+                        {
+                            CategoryID = 3,
+                            Name = "Community"
+                        },
+                        new
+                        {
+                            CategoryID = 4,
+                            Name = "Market"
+                        });
                 });
 
             modelBuilder.Entity("FairfieldConnect.Models.Club", b =>
@@ -171,17 +193,13 @@ namespace FairfieldConnect.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("FairfieldConnect.Models.HousingPost", b =>
+            modelBuilder.Entity("FairfieldConnect.Models.FindPost", b =>
                 {
-                    b.Property<int>("HousingPostID")
+                    b.Property<int>("FindPostID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HousingPostID"), 1L, 1);
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FindPostID"), 1L, 1);
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
@@ -190,8 +208,9 @@ namespace FairfieldConnect.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LandlordID")
-                        .HasColumnType("int");
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Rate")
                         .HasColumnType("int");
@@ -204,15 +223,25 @@ namespace FairfieldConnect.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.HasKey("HousingPostID");
+                    b.HasKey("FindPostID");
 
                     b.HasIndex("CategoryID");
 
-                    b.HasIndex("LandlordID");
-
                     b.HasIndex("StudentID");
 
-                    b.ToTable("HousingPosts");
+                    b.ToTable("FindPosts");
+
+                    b.HasData(
+                        new
+                        {
+                            FindPostID = 1,
+                            CategoryID = 1,
+                            Desc = "I am looking for an apartment/studio that is close to the train station",
+                            Location = "Fairfield, CT",
+                            Rate = 1000,
+                            StudentID = 4,
+                            Title = "Looking for a sublease apartment this FALL"
+                        });
                 });
 
             modelBuilder.Entity("FairfieldConnect.Models.Landlord", b =>
@@ -241,6 +270,132 @@ namespace FairfieldConnect.Migrations
                     b.HasKey("LandlordID");
 
                     b.ToTable("Landlords");
+
+                    b.HasData(
+                        new
+                        {
+                            LandlordID = 1,
+                            Email = "bkp@gmail.com",
+                            Name = "Blue Key Properties",
+                            Phone = "203 194 936"
+                        },
+                        new
+                        {
+                            LandlordID = 2,
+                            Email = "sr@gmail.com",
+                            Name = "Sand Rock",
+                            Phone = "203 134 098"
+                        });
+                });
+
+            modelBuilder.Entity("FairfieldConnect.Models.ListPost", b =>
+                {
+                    b.Property<int>("ListPostID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ListPostID"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LandlordID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("ListPostID");
+
+                    b.HasIndex("CategoryID");
+
+                    b.HasIndex("LandlordID");
+
+                    b.HasIndex("StudentID");
+
+                    b.ToTable("ListPosts");
+
+                    b.HasData(
+                        new
+                        {
+                            ListPostID = 1,
+                            Address = "100 N. River st., Fairfield, CT 06824",
+                            CategoryID = 1,
+                            Desc = "Clean and tidy bedroom in a townhouse, 1 mile to campus, 1.5 miles to the beach",
+                            LandlordID = 1,
+                            Rate = 800,
+                            StudentID = 3,
+                            Title = "Looking for a female roommate"
+                        });
+                });
+
+            modelBuilder.Entity("FairfieldConnect.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewID"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LandlordID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("ReviewID");
+
+                    b.HasIndex("CategoryID");
+
+                    b.HasIndex("LandlordID");
+
+                    b.HasIndex("StudentID");
+
+                    b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            ReviewID = 1,
+                            Address = "apt at 15 University Corner, Fairfield",
+                            CategoryID = 1,
+                            Desc = "Landlord is very responsive and helpful!",
+                            LandlordID = 1,
+                            StudentID = 3,
+                            Title = "Good customer service"
+                        });
                 });
 
             modelBuilder.Entity("FairfieldConnect.Models.SellPost", b =>
@@ -360,12 +515,21 @@ namespace FairfieldConnect.Migrations
                     b.HasData(
                         new
                         {
-                            StudentID = 1,
-                            Address = "104 S.Franklin Dr., Troy, AL",
-                            Dob = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tranminhhien14@gmail.com",
+                            StudentID = 3,
+                            Address = "104 S.Franklin Dr., Troy, AL 36081",
+                            Dob = new DateTime(1997, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "hientran@student.fairfield.edu",
                             Name = "Hien Tran",
-                            Phone = "7346292088"
+                            Phone = "203 888 999"
+                        },
+                        new
+                        {
+                            StudentID = 4,
+                            Address = "154 Oak st., Troy, AL 36081",
+                            Dob = new DateTime(1992, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "tom@student.fairfield.edu",
+                            Name = "Thomas",
+                            Phone = "203 134 987"
                         });
                 });
 
@@ -592,7 +756,53 @@ namespace FairfieldConnect.Migrations
                     b.Navigation("Club");
                 });
 
-            modelBuilder.Entity("FairfieldConnect.Models.HousingPost", b =>
+            modelBuilder.Entity("FairfieldConnect.Models.FindPost", b =>
+                {
+                    b.HasOne("FairfieldConnect.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FairfieldConnect.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("FairfieldConnect.Models.ListPost", b =>
+                {
+                    b.HasOne("FairfieldConnect.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FairfieldConnect.Models.Landlord", "Landlord")
+                        .WithMany()
+                        .HasForeignKey("LandlordID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FairfieldConnect.Models.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Landlord");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("FairfieldConnect.Models.Review", b =>
                 {
                     b.HasOne("FairfieldConnect.Models.Category", "Category")
                         .WithMany()
