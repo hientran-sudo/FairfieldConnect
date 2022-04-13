@@ -13,10 +13,15 @@ public class FairfieldConnectContext : IdentityDbContext<FairfieldConnectUser>
     { }
         public DbSet<Club>? Clubs { get; set; }
         public DbSet<Event>? Events { get; set; }
-        public DbSet<HousingPost>? HousingPosts { get; set; }
+
+        public DbSet<Review>? Reviews { get; set; }
+        public DbSet<ListPost> ListPosts { get; set; }
+        public DbSet<FindPost>? FindPosts { get; set; }
         public DbSet<Landlord>? Landlords { get; set; }
+
         public DbSet<SellPost>? SellPosts { get; set; }
         public DbSet<ShopPost>? ShopPosts { get; set; }
+
         public DbSet<TutoringPost>? TutoringPosts { get; set; }
         public DbSet<Category>? Categories { get; set; }
         public DbSet<Student>? Students { get; set; }
