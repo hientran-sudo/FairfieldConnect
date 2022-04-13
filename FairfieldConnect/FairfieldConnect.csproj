@@ -57,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Housing\" />
     <Folder Include="wwwroot\images\Ram\" />
   </ItemGroup>
 

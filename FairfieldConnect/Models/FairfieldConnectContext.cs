@@ -26,15 +26,51 @@ public class FairfieldConnectContext : IdentityDbContext<FairfieldConnectUser>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        _ = builder.Entity<Student>().HasData(
-                new Student
-                {
-                    StudentID = 1,
-                    Name = "Hien Tran",
-                    Phone = "7346292088",
-                    Email = "tranminhhien14@gmail.com",
-                    Address = "104 S.Franklin Dr., Troy, AL"
-                }
+        builder.Entity<Category>().HasData(
+            new Category
+            {
+                CategoryID = 1,
+                Name = "Housing"
+            },
+            new Category
+            {
+                CategoryID = 2,
+                Name = "Tutoring"
+            },
+            new Category
+            {
+                CategoryID = 3,
+                Name = "Community"
+            },
+            new Category
+            {
+                CategoryID = 4,
+                Name = "Market"
+            }
+                
+        );
+        builder.Entity<Student>().HasData(
+            new Category
+            {
+                CategoryID = 1,
+                Name = "Housing"
+            },
+            new Category
+            {
+                CategoryID = 2,
+                Name = "Tutoring"
+            },
+            new Category
+            {
+                CategoryID = 3,
+                Name = "Community"
+            },
+            new Category
+            {
+                CategoryID = 4,
+                Name = "Market"
+            }
+
         );
     }
 }
