@@ -23,14 +23,14 @@
         <span asp-validation-for="Address" class="text-danger"></span>
     </div>
 
-    @*<div class="form-group">
+    <div class="form-group">
         <label asp-for="StudentID">Student:</label>
         <select asp-for="StudentID" class="form-control"
                 asp-items="@(new SelectList(ViewBag.Students, "StudentID", "Name"))">
             <option value=""></option>
         </select>
         <span asp-validation-for="StudentID" class="text-danger"></span>
-    </div>*@
+    </div>
 
     <div class="form-group">
         <label asp-for="CategoryID">Category:</label>

@@ -18,33 +18,55 @@ namespace FairfieldConnect.Controllers
         }
         public IActionResult Review()
         {
-            var review = context.Reviews.OrderBy(r => r.ReviewID).ToList();
-            return View(review);
-
+            if (context.Reviews != null)
+            {
+                var review = context.Reviews.OrderBy(r => r.ReviewID).ToList();
+                return View(review);
+            }
+            else
+            {
+                return View();
+            }
         }
         
         [HttpGet]
         public IActionResult AddReview()
-        {            
-            ViewBag.Students = context.Students.ToList();
-            ViewBag.Categories = context.Categories.ToList();
-            ViewBag.Landlords = context.Landlords.ToList();
-            return View();
+        {  
+            if (context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                return View();
+            }
+            else
+            {
+                return View();
+            }           
         }
+
         [HttpPost]
         public IActionResult AddReview(Review review)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && context.Reviews != null)
             {
                 context.Reviews.Add(review);
                 context.SaveChanges();
                 return RedirectToAction("Review");
             }
-            else
+            else if (context.Students != null && context.Categories != null && context.Landlords != null)
             {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
                 return View(review);
             }
+            else
+            {
+                return View();
+            }
         }
+
         [HttpGet]
         public IActionResult DeleteReview(int id)
         {
@@ -73,7 +95,5 @@ namespace FairfieldConnect.Controllers
                 return View();
             }
         }
-
-
     }
 }
