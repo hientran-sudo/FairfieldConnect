@@ -14,39 +14,44 @@ namespace FairfieldConnect.Controllers
         }
         public IActionResult Index()
         {
-            if (context.Students != null) {
-
-                var student = context.Students.OrderBy(s => s.StudentID).ToList();
-                return View(student);
-            }
             return View();
         }
-        [HttpGet]
-        public IActionResult Add()
+        public IActionResult Review()
         {
+            var review = context.Reviews.OrderBy(r => r.ReviewID).ToList();
+            return View(review);
+
+        }
+        
+        [HttpGet]
+        public IActionResult AddReview()
+        {            
+            ViewBag.Students = context.Students.ToList();
+            ViewBag.Categories = context.Categories.ToList();
+            ViewBag.Landlords = context.Landlords.ToList();
             return View();
         }
         [HttpPost]
-        public IActionResult Add(Student student)
+        public IActionResult AddReview(Review review)
         {
-            if (ModelState.IsValid && context.Students != null)
+            if (ModelState.IsValid)
             {
-                context.Students.Add(student);
+                context.Reviews.Add(review);
                 context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Review");
             }
             else
             {
-                return View(student);
+                return View(review);
             }
         }
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteReview(int id)
         {
-            if (context.Students != null)
+            if (context.Reviews != null)
             {
-                var s = context.Students.Find(id);
-                return View(s);
+                var review = context.Reviews.Find(id);
+                return View(review);
             }
             else
             {
@@ -54,14 +59,14 @@ namespace FairfieldConnect.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Delete(Student s)
+        public IActionResult DeleteReview(Review review)
         {
             
-            if (context.Students != null)
+            if (context.Reviews != null)
             {
-                context.Students.Remove(s);
+                context.Reviews.Remove(review);
                 context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Review");
             }
             else
             {
