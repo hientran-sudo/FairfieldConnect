@@ -7,17 +7,17 @@ namespace FairfieldConnect.Models
         public int FindPostID { get; set; }
         [Required(ErrorMessage = "Please enter a title.")]
         [StringLength(200)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
         [Required(ErrorMessage = "Please enter a description.")]
-        public string Desc { get; set; }
+        public string? Desc { get; set; }
         [Required(ErrorMessage = "Please enter a location.")]
-        public string Location { get; set; }
+        public string? Location { get; set; }
         public int Rate { get; set; }
 
         public int StudentID { get; set; }
         public int CategoryID { get; set; }
 
-        public Student Student { get; set; }
-        public Category Category { get; set; }
+        public Student? Student { get; set; }
+        public Category? Category { get; set; }
     }
 }

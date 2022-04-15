@@ -7,9 +7,9 @@ namespace FairfieldConnect.Models
         public int ShopPostID { get; set; }
         [Required(ErrorMessage = "Please enter a title.")]
         [StringLength(200)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
         [Required(ErrorMessage = "Please enter a description.")]
-        public string Desc { get; set; }
+        public string? Desc { get; set; }
         [Range(0.0, 1000000.0, ErrorMessage = "Price must be more than 0.")]
         public double Price { get; set; }
         [DataType(DataType.Date)]
@@ -20,7 +20,7 @@ namespace FairfieldConnect.Models
         public int StudentID { get; set; }
         public int CategoryID { get; set; }
 
-        public Student Student { get; set; }
-        public Category Category { get; set; }
+        public Student? Student { get; set; }
+        public Category? Category { get; set; }
     }
 }

@@ -11,10 +11,11 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Address</th>
-                    @*<th></th>*@
+                    @*<th>Landlord</th>*@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var r in Model)
                 {
                     <tr>
@@ -22,10 +23,11 @@
                         <td>@r.Title</td>
                         <td>@r.Desc</td>
                         <td>@r.Address</td>
+                        @*<td>@r.Landlord.Name</td>*@
                         <td>                           
                                @* <a asp-controller="Product" asp-action="Details" asp-route-id=@p.ProductID class="btn btn-info"> Details </a>
                                 <a asp-controller="Product" asp-action="Edit" asp-route-id=@p.ProductID class="btn btn-info"> Edit </a>*@
-                                <a asp-controller="Housing" asp-action="" asp-route-id="@r.ReviewID" class="btn btn-info"> Delete </a>
+                                <a asp-controller="Housing" asp-action="DeleteReview" asp-route-id="@r.ReviewID" class="btn btn-info"> Delete </a>
 
                         </td>
                     </tr>
