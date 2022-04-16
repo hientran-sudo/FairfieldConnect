@@ -58,6 +58,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Views\Student\" />
     <Folder Include="wwwroot\images\Ram\" />
   </ItemGroup>
 
