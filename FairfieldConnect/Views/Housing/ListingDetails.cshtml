@@ -35,8 +35,10 @@
                 <td>@Model.Student.Name</td>
             </tr>          
         </table>
-        <h4>Interested?</h4>
-        <h4>Contact Information</h4>
+</div>
+
+<div style="margin-top:40px">
+    <h4>Contact Information</h4>
         <table>
             <tr>
                 <td>Name:</td>
@@ -51,6 +53,11 @@
                 <td>@Model.Student.Email</td>           
             </tr>
         </table>
-                
-        <button asp-controller="Housing" asp-action="Listing" class="btn btn-warning">Cancel</button>
+         <br/>
+        <form>
+            <button asp-controller="Housing" asp-action="Listing" class="btn btn-warning">Cancel</button>
+        </form>          
 </div>
+            
+        
+
