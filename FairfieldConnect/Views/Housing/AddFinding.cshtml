@@ -1,0 +1,62 @@
+﻿@model FindPost
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h3>Leave a review</h3>
+<form asp-action="AddFinding" method="post" style="width:800px">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Title">Title:</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Desc">Desc:</label>
+        <textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" Title="text" placeholder="Enter content"></textarea>
+        <span asp-validation-for="Desc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Location">Location:</label>
+        <input type="text" asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rate">Rate:</label>
+        <input type="text" asp-for="Rate" class="form-control" />
+        <span asp-validation-for="Rate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StudentID">Student:</label>
+        <select asp-for="StudentID" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Students, "StudentID", "Name"))">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="StudentID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryID">Category:</label>
+        <select asp-for="CategoryID" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Categories, "CategoryID", "Name"))">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="CategoryID" class="text-danger"></span>
+    </div>
+
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-info" />
+        <button asp-action="Find" class="btn btn-warning">Cancel</button>
+    </div>
+</form>
+
+
+
+
+
