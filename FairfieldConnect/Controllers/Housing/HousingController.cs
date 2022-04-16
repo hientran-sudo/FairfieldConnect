@@ -151,6 +151,56 @@ namespace FairfieldConnect.Controllers
                 return View();
             }
         }
+        public IActionResult Listing()
+        {
+            if (context.ListPosts != null)
+            {
+                var list = context.ListPosts.OrderBy(r => r.ListPostID).ToList();
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult AddListing()
+        {
+            if (context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult AddListing(ListPost list)
+        {
+            if (ModelState.IsValid && context.ListPosts != null)
+            {
+                context.ListPosts.Add(list);
+                context.SaveChanges();
+                return RedirectToAction("Listing");
+            }
+            else if (context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
 
     }
 }

@@ -20,13 +20,15 @@
                 @foreach (var r in Model)
                 {
                     <tr>
-                        <td>@r.ReviewID</td>
+                        <td>@r.ListPostID</td>
                         <td>@r.Title</td>
                         <td>@r.Desc</td>
+                        <td>@r.Address</td>
+                        <td>@r.Rate</td>
                         <td>
-                            <a asp-controller="Housing" asp-action="ReviewDetails" asp-route-id=@r.ReviewID class="btn btn-info"> Details </a>
-                            <a asp-controller="Housing" asp-action="EditReview" asp-route-id=@r.ReviewID class="btn btn-info"> Edit </a>
-                            <a asp-controller="Housing" asp-action="DeleteReview" asp-route-id="@r.ReviewID" class="btn btn-info"> Delete </a>                              
+                            <a asp-controller="Housing" asp-action="ListPostDetails" asp-route-id=@r.ListPostID class="btn btn-info"> Details </a>
+                            <a asp-controller="Housing" asp-action="EditListPost" asp-route-id=@r.ListPostID class="btn btn-info"> Edit </a>
+                            <a asp-controller="Housing" asp-action="DeleteListPost" asp-route-id="@r.ListPostID" class="btn btn-info"> Delete </a>                              
                         </td>
                     </tr>
                 }
@@ -36,8 +38,8 @@
 </div>
 
 <br/>
- <form asp-action="AddReview">
-     <button type="submit" class="btn btn-info"> Leave a Review </button>
+ <form asp-action="AddListing">
+     <button type="submit" class="btn btn-info"> Create a Listing </button>
  </form>
                 
 
