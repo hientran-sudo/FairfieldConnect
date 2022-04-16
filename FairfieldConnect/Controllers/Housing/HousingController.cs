@@ -202,5 +202,91 @@ namespace FairfieldConnect.Controllers
             }
         }
 
+
+        [HttpGet]
+        public IActionResult DeleteListing(int id)
+        {
+            if (context.ListPosts != null)
+            {
+                var list = context.ListPosts.Find(id);
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult DeleteListing(ListPost list)
+        {
+
+            if (context.ListPosts != null)
+            {
+                context.ListPosts.Remove(list);
+                context.SaveChanges();
+                return RedirectToAction("Listing");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult ListingDetails(int id)
+        {
+            if (context.ListPosts != null && context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+                ListPost list = context.ListPosts.Find(id);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpGet]
+        public IActionResult EditListing(int id)
+        {
+            if (context.ListPosts != null && context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                var list = context.ListPosts.Find(id);
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult EditListing(ListPost list)
+        {
+            if (ModelState.IsValid && context.ListPosts != null)
+            {
+                context.ListPosts.Update(list);
+                context.SaveChanges();
+                return RedirectToAction("Listing");
+            }
+            else if (context.ListPosts != null && context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }

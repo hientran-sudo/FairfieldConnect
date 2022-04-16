@@ -26,9 +26,9 @@
                         <td>@r.Address</td>
                         <td>@r.Rate</td>
                         <td>
-                            <a asp-controller="Housing" asp-action="ListPostDetails" asp-route-id=@r.ListPostID class="btn btn-info"> Details </a>
-                            <a asp-controller="Housing" asp-action="EditListPost" asp-route-id=@r.ListPostID class="btn btn-info"> Edit </a>
-                            <a asp-controller="Housing" asp-action="DeleteListPost" asp-route-id="@r.ListPostID" class="btn btn-info"> Delete </a>                              
+                            <a asp-controller="Housing" asp-action="ListingDetails" asp-route-id=@r.ListPostID class="btn btn-info"> Details </a>
+                            <a asp-controller="Housing" asp-action="EditListing" asp-route-id=@r.ListPostID class="btn btn-info"> Edit </a>
+                            <a asp-controller="Housing" asp-action="DeleteListing" asp-route-id="@r.ListPostID" class="btn btn-info"> Delete </a>                              
                         </td>
                     </tr>
                 }
