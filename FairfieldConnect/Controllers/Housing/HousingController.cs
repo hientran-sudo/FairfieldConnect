@@ -288,5 +288,138 @@ namespace FairfieldConnect.Controllers
             }
         }
 
+        //
+        public IActionResult Find()
+        {
+            if (context.FindPosts != null)
+            {
+                var list = context.FindPosts.OrderBy(r => r.FindPostID).ToList();
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult AddFinding()
+        {
+            if (context.Students != null && context.Categories != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult AddFinding(FindPost list)
+        {
+            if (ModelState.IsValid && context.FindPosts != null)
+            {
+                context.FindPosts.Add(list);
+                context.SaveChanges();
+                return RedirectToAction("Find");
+            }
+            else if (context.Students != null && context.Categories != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
+        [HttpGet]
+        public IActionResult DeleteFinding(int id)
+        {
+            if (context.FindPosts != null)
+            {
+                var list = context.FindPosts.Find(id);
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult DeleteFinding(FindPost list)
+        {
+
+            if (context.FindPosts != null)
+            {
+                context.FindPosts.Remove(list);
+                context.SaveChanges();
+                return RedirectToAction("Find");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult FindingDetails(int id)
+        {
+            if (context.FindPosts != null && context.Students != null && context.Categories != null)
+            {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+                FindPost list = context.FindPosts.Find(id);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpGet]
+        public IActionResult EditFinding (int id)
+        {
+            if (context.FindPosts != null && context.Students != null && context.Categories != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                var list = context.FindPosts.Find(id);
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult EditFinding(FindPost list)
+        {
+            if (ModelState.IsValid && context.FindPosts != null)
+            {
+                context.FindPosts.Update(list);
+                context.SaveChanges();
+                return RedirectToAction("Find");
+            }
+            else if (context.FindPosts != null && context.Students != null && context.Categories != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }

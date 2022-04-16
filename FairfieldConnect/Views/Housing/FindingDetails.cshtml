@@ -1,9 +1,9 @@
-﻿@model ListPost
+﻿@model FindPost
 @{
     ViewBag.Title = "Details";
 }
 
-<h3>Listing Details</h3>
+<h3>Finding Details</h3>
 <div class="row" style="width:800px">      
         <table>
             <tr>
@@ -15,20 +15,12 @@
                 <td>@Model.Desc</td>
             </tr>
             <tr>
-                <td>Address:</td>
-                <td>@Model.Address</td>
-            </tr>
-            <tr>
-                <td>Rate:</td>
-                <td>@Model.Rate</td>
+                <td>Location:</td>
+                <td>@Model.Location</td>
             </tr>
             <tr>
                 <td>Category:</td>
                 <td>@Model.Category.Name</td>
-            </tr>
-            <tr>
-                <td>Landlord:</td>
-                <td>@Model.Landlord.Name</td>
             </tr>
             <tr>
                 <td>Reviewd by:</td>
@@ -36,3 +28,4 @@
             </tr>          
         </table>
 </div>
+

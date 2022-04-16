@@ -1,12 +1,12 @@
-﻿@model Review
+﻿@model ListPost
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h3>Edit Review</h3>
-<form asp-action="EditReview" method="post" style="width:800px">
+<h3>Edit Listing</h3>
+<form asp-action="EditListing" method="post" style="width:800px">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="ReviewID" />
+    <input type="hidden" asp-for="ListPostID" />
 
     <div class="form-group">
         <label asp-for="Title">Title:</label>
@@ -23,6 +23,12 @@
         <label asp-for="Address">Address:</label>
         <input type="text" asp-for="Address" class="form-control" />
         <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rate">Rate:</label>
+        <input type="text" asp-for="Rate" class="form-control" />
+        <span asp-validation-for="Rate" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -54,9 +60,10 @@
 
     <div class="form-group">
         <input type="submit" value="Edit" class="btn btn-info" />
-        <button asp-action="Review" class="btn btn-warning">Cancel</button>
+        <button asp-action="Listing" class="btn btn-warning">Cancel</button>
     </div>
 </form>
+
 
 
 

@@ -1,0 +1,54 @@
+﻿@model List<FindPost>
+@{
+    ViewBag.Title = "Findings";
+}
+<div class="row">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Rate</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var r in Model)
+                {
+                    <tr>
+                        <td>@r.FindPostID</td>
+                        <td>@r.Title</td>
+                        <td>@r.Desc</td>
+                        <td>@r.Location</td>
+                        <td>@r.Rate</td>
+                        <td>
+                            <a asp-controller="Housing" asp-action="FindingDetails" asp-route-id=@r.FindPostID class="btn btn-info"> Details </a>
+                            <a asp-controller="Housing" asp-action="EditFinding" asp-route-id=@r.FindPostID class="btn btn-info"> Edit </a>
+                            <a asp-controller="Housing" asp-action="DeleteFinding" asp-route-id="@r.FindPostID" class="btn btn-info"> Delete </a>                              
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>        
+    </div>
+</div>
+
+<br/>
+ <form asp-action="AddFinding">
+     <button type="submit" class="btn btn-info"> Start to find </button>
+ </form>
+                
+
+
+                       
+                  
+                    
+
+
+   
+
+
