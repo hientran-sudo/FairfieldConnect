@@ -95,5 +95,48 @@ namespace FairfieldConnect.Controllers
                 return View();
             }
         }
+
+        public IActionResult ReviewDetails(int id)
+        {
+            if (context.Reviews != null && context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                Review review = context.Reviews.Find(id);
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+
+                return View(review);
+            }
+            else
+            {
+                return View();
+            }          
+        }
+        [HttpGet]
+        public IActionResult EditReview(int id)
+        {
+            ViewBag.Students = context.Students.ToList();
+            ViewBag.Categories = context.Categories.ToList();
+            ViewBag.Landlords = context.Landlords.ToList();
+            var review = context.Reviews.Find(id);
+            return View(review);
+        }
+        [HttpPost]
+        public IActionResult EditReview(Review review)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Reviews.Update(review);
+                context.SaveChanges();
+                return RedirectToAction("Review");
+            }
+            else
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                return View(review);
+            }
+        }
     }
 }

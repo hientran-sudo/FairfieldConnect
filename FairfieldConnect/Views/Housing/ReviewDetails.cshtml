@@ -1,0 +1,34 @@
+﻿@model Review
+@{
+    ViewBag.Title = " Review Details";
+}
+
+<h1>Review Details</h1>
+<div class="row">      
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td>@Model.Title</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>@Model.Desc</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>@Model.Address</td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>@Model.Category.Name</td>
+            </tr>
+            <tr>
+                <td>Landlord:</td>
+                <td>@Model.Landlord.Name</td>
+            </tr>
+            <tr>
+                <td>Reviewd by:</td>
+                <td>@Model.Student.Name</td>
+            </tr>          
+        </table>
+</div>
