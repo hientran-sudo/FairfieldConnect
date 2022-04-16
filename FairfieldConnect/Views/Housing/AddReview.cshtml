@@ -1,4 +1,7 @@
 ﻿@model Review
+@{
+    ViewData["Title"] = "Add";
+}
 
 <h3>Leave a review</h3>
 <form asp-action="AddReview" method="post" style="width:800px">
@@ -12,8 +15,7 @@
 
     <div class="form-group">
         <label asp-for="Desc">Desc:</label>
-        <input type="text" asp-for="Desc" class="form-control" />
-        @*<textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" Title="text" placeholder="Enter content"></textarea>*@
+        <textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" Title="text" placeholder="Enter content"></textarea>
         <span asp-validation-for="Desc" class="text-danger"></span>
     </div>
 
@@ -53,7 +55,7 @@
     <br />
     <div class="form-group">
         <input type="submit" value="Add" class="btn btn-info" />
-        <a asp-action="Review" class="btn btn-info">Cancel</a>
+        <button asp-action="Review" class="btn btn-warning">Cancel</button>
     </div>
 </form>
 

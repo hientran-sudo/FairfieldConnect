@@ -100,7 +100,9 @@ namespace FairfieldConnect.Controllers
         {
             if (context.Reviews != null && context.Students != null && context.Categories != null && context.Landlords != null)
             {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 Review review = context.Reviews.Find(id);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 ViewBag.Students = context.Students.ToList();
                 ViewBag.Categories = context.Categories.ToList();
                 ViewBag.Landlords = context.Landlords.ToList();
@@ -115,28 +117,40 @@ namespace FairfieldConnect.Controllers
         [HttpGet]
         public IActionResult EditReview(int id)
         {
-            ViewBag.Students = context.Students.ToList();
-            ViewBag.Categories = context.Categories.ToList();
-            ViewBag.Landlords = context.Landlords.ToList();
-            var review = context.Reviews.Find(id);
-            return View(review);
+            if (context.Reviews != null && context.Students != null && context.Categories != null && context.Landlords != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                ViewBag.Landlords = context.Landlords.ToList();
+                var review = context.Reviews.Find(id);
+                return View(review);
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public IActionResult EditReview(Review review)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && context.Reviews != null)
             {
                 context.Reviews.Update(review);
                 context.SaveChanges();
                 return RedirectToAction("Review");
             }
-            else
+            else if (context.Reviews != null && context.Students != null && context.Categories != null && context.Landlords != null)
             {
                 ViewBag.Students = context.Students.ToList();
                 ViewBag.Categories = context.Categories.ToList();
                 ViewBag.Landlords = context.Landlords.ToList();
                 return View(review);
             }
+            else
+            {
+                return View();
+            }
         }
+
     }
 }

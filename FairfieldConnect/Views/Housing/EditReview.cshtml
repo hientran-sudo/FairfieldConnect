@@ -1,7 +1,10 @@
 ﻿@model Review
+@{
+    ViewData["Title"] = "Edit";
+}
 
 <h3>Edit Reviews</h3>
-<form asp-action="EditReview" method="post">
+<form asp-action="EditReview" method="post" style="width:800px">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="ReviewID" />
 
@@ -12,8 +15,7 @@
     </div>
     <div class="form-group">
         <label asp-for="Desc">Desc:</label>
-        <input type="text" asp-for="Desc" class="form-control" />
-        @*<textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" Title="text" placeholder="Enter content"></textarea>*@
+        <textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" Title="text" placeholder="Enter content"></textarea>
         <span asp-validation-for="Desc" class="text-danger"></span>
     </div>
 
@@ -52,7 +54,7 @@
 
     <div class="form-group">
         <input type="submit" value="Edit" class="btn btn-info" />
-        <a asp-action="Review" class="btn btn-info">Cancel</a>
+        <button asp-action="Review" class="btn btn-warning">Cancel</button>
     </div>
 </form>
 
