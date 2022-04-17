@@ -1,26 +1,54 @@
+@model List<TutoringPost>
 @{
-    ViewData["Title"] = "Tutoring Page";
+    ViewBag.Title = "Tutorings";
 }
-<body background="ff.jpg" class="bg">
 <div class="row">
-  <div class="column1">
-    <div class="card">
-            <img src="ff1.jpg" alt="" style="width:100%">
-            <div class="container">
-                <h4><b><a asp-area="" asp-controller="TFind" asp-action="Index">Find a Tutor</a></b></h4> 
-                <p></p> 
-            </div>
-        </div>
-  </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Subject</th>
+                    <th>Rate</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
 
-  <div class="column1">
-    <div class="card">
-            <img src="ff1.jpg" alt="" style="width:100%">
-            <div class="container">
-                <h4><b><a asp-area="" asp-controller="TList" asp-action="Index">Be a Tutor</a></b></h4> 
-                <p></p> 
-            </div>
-        </div>
-  </div>
+                @foreach (var r in Model)
+                {
+                    <tr>
+                        <td>@r.TutoringPostID</td>
+                        <td>@r.Title</td>
+                        <td>@r.Desc</td>
+                        <td>@r.Subject</td>
+                        <td>@r.Rate</td>
+                        <td>
+                            <a asp-controller="Tutoring" asp-action="Details" asp-route-id=@r.TutoringPostID class="btn btn-info"> Details </a>
+                            <a asp-controller="Tutoring" asp-action="Edit" asp-route-id=@r.TutoringPostID class="btn btn-info"> Edit </a>
+                            <a asp-controller="Tutoring" asp-action="Delete" asp-route-id="@r.TutoringPostID" class="btn btn-info"> Delete </a>                              
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>        
+    </div>
 </div>
-</body>
+
+<br/>
+ <form asp-action="Add">
+     <button type="submit" class="btn btn-info"> Find a Tutor </button>
+ </form>
+                
+
+
+                       
+                  
+                    
+
+
+   
+
+
