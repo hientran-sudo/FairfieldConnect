@@ -61,5 +61,87 @@ namespace FairfieldConnect.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (context.TutoringPosts != null)
+            {
+                var find = context.TutoringPosts.Find(id);
+                return View(find);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult Delete(TutoringPost find)
+        {
+
+            if (context.TutoringPosts != null)
+            {
+                context.TutoringPosts.Remove(find);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult Details(int id)
+        {
+            if (context.TutoringPosts != null && context.Students != null && context.Categories != null)
+            {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+                TutoringPost find = context.TutoringPosts.Find(id);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+
+                return View(find);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            if (context.TutoringPosts != null && context.Students != null && context.Categories != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                var find = context.TutoringPosts.Find(id);
+                return View(find);
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public IActionResult Edit(TutoringPost find)
+        {
+            if (ModelState.IsValid && context.TutoringPosts != null)
+            {
+                context.TutoringPosts.Update(find);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else if (context.TutoringPosts != null && context.Students != null && context.Categories != null)
+            {
+                ViewBag.Students = context.Students.ToList();
+                ViewBag.Categories = context.Categories.ToList();
+                return View(find);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }

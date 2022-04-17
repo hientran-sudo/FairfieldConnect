@@ -1,4 +1,4 @@
-﻿@*@model Product*@
+﻿@model TutoringPost
 @{
     ViewData["Title"] = "Delete";
 }
@@ -8,23 +8,23 @@
 <div>
     <dl class="row">
         <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Title)*@
+            @Html.DisplayNameFor(model => model.Title)
         </dt>
         <dd class="col-sm-10">
-            @*@Html.DisplayFor(model => model.Title)*@
+            @Html.DisplayFor(model => model.Title)
         </dd>
         <dt class="col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Description)*@
+            @Html.DisplayNameFor(model => model.Desc)
         </dt>
         <dd class="col-sm-10">
-            @*@Html.DisplayFor(model => model.Description)*@
+            @Html.DisplayFor(model => model.Desc)
         </dd>
         
     </dl>
     <form asp-action="Delete" method="post">
-        <input type="hidden" @*asp-for=""*@ />
+        <input type="hidden" asp-for="TutoringPostID" />
         <button type="submit" class="btn btn-danger"> Delete </button>
-        <a asp-controller="TFind" asp-action="Index" class="btn btn-warning">Cancel</a>
+        <a asp-controller="Tutoring" asp-action="Index" class="btn btn-warning">Cancel</a>
     </form>
 </div>
 
