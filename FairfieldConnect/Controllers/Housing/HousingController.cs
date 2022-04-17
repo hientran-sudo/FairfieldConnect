@@ -12,10 +12,6 @@ namespace FairfieldConnect.Controllers
         {
             context = ctx;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult Review()
         {
             if (context.Reviews != null)
