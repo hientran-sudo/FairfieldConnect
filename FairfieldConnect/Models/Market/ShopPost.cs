@@ -12,10 +12,6 @@ namespace FairfieldConnect.Models
         public string? Desc { get; set; }
         [Range(0.0, 1000000.0, ErrorMessage = "Price must be more than 0.")]
         public double Price { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Created")]
-        public DateTime Created { get; set; }
 
         public int StudentID { get; set; }
         public int CategoryID { get; set; }

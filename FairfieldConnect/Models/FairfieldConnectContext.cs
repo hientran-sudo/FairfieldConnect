@@ -130,5 +130,62 @@ public class FairfieldConnectContext : IdentityDbContext<FairfieldConnectUser>
                 LandlordID = 1,
             }
         );
+        builder.Entity<TutoringPost>().HasData(
+            new TutoringPost
+            {
+                TutoringPostID = 1,
+                Title = "Look for tutoring",
+                Desc = "I need a tutor who is free on Monday afternoon",
+                Subject = "Math",
+                Rate = 15,
+                StudentID = 3,
+                CategoryID = 2,
+            }
+        );
+        builder.Entity<Club>().HasData(
+            new Club
+            {
+                ClubID = 1,
+                Name = "Fairfield Student Association",
+                Desc = "Connect Stags",
+                StudentID = 3,
+                CategoryID = 3,
+            }
+        );
+        builder.Entity<Event>().HasData(
+            new Event
+            {
+                EventID = 1,
+                Title = "Career Fair 2022",
+                Desc = "Opportunity to meet potential employers to expand networking",
+                Location = "Kelly Center, room 203",
+                Hosting = new DateTime(2022, 05, 15, 15,00,00),
+                ClubID = 1,
+            }
+        );
+        builder.Entity<SellPost>().HasData(
+            new SellPost
+            {
+                SellPostID = 1,
+                Title = "Have a new laptop",
+                Desc = "Dell Inspiron 2022, intel core i7",
+                Price = 1000,
+                Location = "pick up at lower level BCC",
+                StudentID = 4,
+                CategoryID = 4,
+            }
+        );
+        builder.Entity<ShopPost>().HasData(
+            new ShopPost
+            {
+                ShopPostID = 1,
+                Title = "Look for a macbook",
+                Desc = "I am looking for an used Macbook",
+                Price = 1000,
+                StudentID = 4,
+                CategoryID = 4,
+            }
+        );
+
     }
 }
