@@ -30,19 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Market\Component.razor" />
-    <Content Remove="Views\Market\Index1.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Views\Market\building.jpg" />
-    <None Remove="Views\Market\store.html" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\css\sell.css" />
     <None Include="wwwroot\ff1.jpg" />
     <None Include="wwwroot\images\Market_Images\typing.jpg" />
+    <None Include="wwwroot\logo.png" />
   </ItemGroup>
 
   <ItemGroup>

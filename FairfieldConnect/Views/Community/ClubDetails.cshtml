@@ -1,0 +1,28 @@
+﻿@model Club
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Review Details</h3>
+<div class="row" style="width:800px">      
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>@Model.Desc</td>
+            </tr>
+           
+            <tr>
+                <td>Category:</td>
+                <td>@Model.Category.Name</td>
+            </tr>           
+            <tr>
+                <td>Created by:</td>
+                <td>@Model.Student.Name</td>
+            </tr>          
+        </table>
+</div>
+

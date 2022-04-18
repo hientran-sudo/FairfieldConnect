@@ -24,9 +24,9 @@
                         <td>@r.Desc</td>
                         
                         <td>
-                            <a asp-controller="Community" asp-action="Details" asp-route-id=@r.ClubID class="btn btn-info"> Details </a>
-                            <a asp-controller="Community" asp-action="Edit" asp-route-id=@r.ClubID class="btn btn-info"> Edit </a>
-                            <a asp-controller="Community" asp-action="Delete" asp-route-id="@r.ClubID" class="btn btn-info"> Delete </a>                              
+                            <a asp-controller="Community" asp-action="ClubDetails" asp-route-id=@r.ClubID class="btn btn-info"> Details </a>
+                            <a asp-controller="Community" asp-action="EditClub" asp-route-id=@r.ClubID class="btn btn-info"> Edit </a>
+                            <a asp-controller="Community" asp-action="DeleteClub" asp-route-id="@r.ClubID" class="btn btn-info"> Delete </a>                              
                         </td>
                     </tr>
                 }
@@ -36,7 +36,7 @@
 </div>
 
 <br/>
- <form asp-action="Add">
+ <form asp-action="AddClub">
      <button type="submit" class="btn btn-info"> Start a Club </button>
  </form>
                 

@@ -1,0 +1,46 @@
+﻿@model Club
+@{
+    ViewBag.Title = "Clubs";
+}
+<h3>Add New Club</h3>
+<form asp-action="AddClub" method="post" style="width:800px">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Desc">Description:</label>
+        <textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" title="text" placeholder="Enter content"></textarea>      
+        <span asp-validation-for="Desc" class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label asp-for="StudentID">Student:</label>
+        <select asp-for="StudentID" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Students, "StudentID", "Name"))">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="StudentID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryID">Category:</label>
+        <select asp-for="CategoryID" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Categories, "CategoryID", "Name"))">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="CategoryID" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-info" />
+        <button asp-action="Clubs" class="btn btn-warning">Cancel</button>
+    </div>
+</form>
+
+
+

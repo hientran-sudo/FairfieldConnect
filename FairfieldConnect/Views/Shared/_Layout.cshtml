@@ -13,12 +13,19 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <h4>FairfieldConnect</h4>
+                <img src="~/logo.png" width=120 height=50>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Internal" asp-action="Index">Home</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-controller="Internal" asp-action="Index">Home</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-area="" asp-controller="Internal" asp-action="About">About Us</a>
+                            </div>
                         </li>
+                       
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Housing
                             </a>
@@ -43,21 +50,10 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-@*                                <a class="dropdown-item" asp-area="" asp-controller="Community" asp-action="Social">Social</a>
-*@                                <a class="dropdown-item" asp-area="" asp-controller="Community" asp-action="Events">Events</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Community" asp-action="Events">Events</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="Community" asp-action="Clubs">Clubs</a>
                             </div>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Market Place
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-area="" asp-controller="Market" asp-action="Shop">Shop</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Market" asp-action="Sell">Sell</a>
-                            </div>
-                        </li>
-                        
+                        </li>                      
                     </ul>
                     @*<div class="navbar-right ml-auto">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
@@ -73,17 +69,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="row">
-            <div class="column1">
-                <h4><b><a asp-area="" asp-controller="Internal" asp-action="About">About Us</a></b></h4>
-            </div>
-
-            <div class="column1">
-
-                <h4><b><a asp-area="" asp-controller="" asp-action=""></a></b></h4>
-            </div>
-        </div>
-
+        
         <div class="container">
             &copy; 2022 - FairfieldConnect - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
