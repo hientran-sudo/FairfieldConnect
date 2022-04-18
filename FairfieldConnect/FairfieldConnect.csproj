@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\sell.css" />
     <None Include="wwwroot\images\home\social.jpg" />
     <None Include="wwwroot\images\home\logo.png" />
   </ItemGroup>
