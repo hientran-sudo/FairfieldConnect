@@ -1,21 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FairfieldConnect.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FairfieldConnect.Controllers
 {
     public class CommunityController : Controller
     {
-        public IActionResult Index()
+        private FairfieldConnectContext context { get; set; }
+
+        public CommunityController(FairfieldConnectContext ctx)
         {
-            return View();
-        }
-        public IActionResult Social()
-        {
-            return View();
+            context = ctx;
         }
         public IActionResult Clubs()
         {
-            return View();
+            if (context.Clubs != null)
+            {
+                var club = context.Clubs.OrderBy(r => r.ClubID).ToList();
+                return View(club);
+            }
+            else
+            {
+                return View();
+            }
         }
+       
         public IActionResult Events()
         {
             return View();
