@@ -1,0 +1,32 @@
+﻿@model Event
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Review Details</h3>
+<div class="row" style="width:800px">      
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td>@Model.Title</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>@Model.Desc</td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>@Model.Location</td>
+            </tr>
+            <tr>
+                <td>Hosting Time:</td>
+                <td>@Model.Hosting</td>
+            </tr>
+                      
+            <tr>
+                <td>Hosted by:</td>
+                <td>@Model.Club.Name</td>
+            </tr>          
+        </table>
+</div>
+

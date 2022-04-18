@@ -1,0 +1,49 @@
+﻿@model Event
+@{
+    ViewBag.Title = "Events";
+}
+<h3>Add New Event</h3>
+<form asp-action="AddEvent" method="post" style="width:800px">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Title">Title:</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Desc">Description:</label>
+        <textarea type="text" asp-for="Desc" class="form-control" rows="5" cols="60" title="text" placeholder="Enter content"></textarea>      
+        <span asp-validation-for="Desc" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Location">Location:</label>
+        <input type="text" asp-for="Location" class="form-control" rows="5" cols="60" title="text" placeholder="Enter content"/>      
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Hosting">Hosting Time:</label>
+        <input type="text" asp-for="Hosting" class="form-control" rows="5" cols="60" title="text" placeholder="Enter content"/>       
+        <span asp-validation-for="Hosting" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClubID">Club:</label>
+        <select asp-for="ClubID" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Clubs, "ClubID", "Name"))">
+            <option value=""></option>
+        </select>
+        <span asp-validation-for="ClubID" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-info" />
+        <button asp-action="Events" class="btn btn-warning">Cancel</button>
+    </div>
+</form>
+
+
+

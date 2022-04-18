@@ -1,0 +1,55 @@
+﻿@model List<Event>
+@{
+    ViewBag.Title = "Events";
+}
+<div class="row">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Hosting</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var r in Model)
+                {
+                    <tr>
+                        <td>@r.EventID</td>
+                        <td>@r.Title</td>
+                        <td>@r.Desc</td>
+                        <td>@r.Location</td>
+                        <td>@r.Hosting</td>
+                        
+                        <td>
+                            <a asp-controller="Community" asp-action="EventDetails" asp-route-id=@r.EventID class="btn btn-info"> Details </a>
+                            <a asp-controller="Community" asp-action="EditEvent" asp-route-id=@r.EventID class="btn btn-info"> Edit </a>
+                            <a asp-controller="Community" asp-action="DeleteEvent" asp-route-id="@r.EventID" class="btn btn-info"> Delete </a>                              
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>        
+    </div>
+</div>
+
+<br/>
+ <form asp-action="AddEvent">
+     <button type="submit" class="btn btn-info"> Start a Event </button>
+ </form>
+                
+
+
+                       
+                  
+                    
+
+
+   
+
+
