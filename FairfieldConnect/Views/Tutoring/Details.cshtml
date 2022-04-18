@@ -1,5 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model TutoringPost
 @{
+    ViewBag.Title = "Details";
 }
+
+<h3>Finding Details</h3>
+<div class="row" style="width:800px">      
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td>@Model.Title</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>@Model.Desc</td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>@Model.Subject</td>
+            </tr>
+            <tr>
+                <td>Rate:</td>
+                <td>@Model.Rate</td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>@Model.Category.Name</td>
+            </tr>
+            <tr>
+                <td>Created by:</td>
+                <td>@Model.Student.Name</td>
+            </tr>          
+        </table>
+</div>
+<div style="margin-top:40px">
+    <h4>Contact Information</h4>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>@Model.Student.Name</td>           
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td>@Model.Student.Phone</td>           
+            </tr>
+             <tr>
+                <td>Email:</td>
+                <td>@Model.Student.Email</td>           
+            </tr>
+        </table>
+        <br/>
+        <form>
+            <button asp-controller="Tutoring" asp-action="Index" class="btn btn-warning">Cancel</button>
+        </form>          
+</div>
+
