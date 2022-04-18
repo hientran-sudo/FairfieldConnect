@@ -31,7 +31,7 @@
                 <td>@Model.Landlord.Name</td>
             </tr>
             <tr>
-                <td>Createdd by:</td>
+                <td>Created by:</td>
                 <td>@Model.Student.Name</td>
             </tr>          
         </table>
@@ -55,7 +55,9 @@
         </table>
          <br/>
         <form>
-            <button asp-controller="Housing" asp-action="Listing" class="btn btn-warning">Cancel</button>
+             <a asp-controller="Housing" asp-action="EditListing" asp-route-id=@Model.ListPostID class="btn btn-info"> Edit </a>                          
+             <a asp-controller="Housing" asp-action="DeleteListing" asp-route-id="@Model.ListPostID" class="btn btn-info"> Delete </a>
+             <button asp-controller="Housing" asp-action="Listing" class="btn btn-warning">Cancel</button>
         </form>          
 </div>
             
