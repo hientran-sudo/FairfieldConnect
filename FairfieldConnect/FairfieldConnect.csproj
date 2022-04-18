@@ -31,9 +31,8 @@
 
   <ItemGroup>
     <None Include="wwwroot\css\sell.css" />
-    <None Include="wwwroot\ff1.jpg" />
-    <None Include="wwwroot\images\Market_Images\typing.jpg" />
-    <None Include="wwwroot\logo.png" />
+    <None Include="wwwroot\images\home\social.jpg" />
+    <None Include="wwwroot\images\home\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,7 +49,6 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Views\Student\" />
-    <Folder Include="wwwroot\images\Ram\" />
   </ItemGroup>
 
 </Project>
