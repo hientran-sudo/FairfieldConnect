@@ -1,4 +1,4 @@
-html {
+/*html {
   font-size: 14px;
 }
 
@@ -11,12 +11,7 @@ html {
 html {
   position: relative;
   min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
-    background-color: white;
-}
+}*/
 
 .grid-container {
     display: grid;
@@ -37,11 +32,6 @@ body {
     align-items: center;
     justify-content: center
 }
-
-/*img {
-    max-width: 100%
-}
-*/
 .image {
     flex-basis: 40%
 }
@@ -51,20 +41,11 @@ body {
     padding-left: 20px;
 }
 
-.bg {
+/*.bg {
     background-repeat: no-repeat;
     height: 100%;
     background-size: cover;
-}
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 100%;
-}
-
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
+}*/
 
 .column {
     float: left;
@@ -140,4 +121,22 @@ a:hover {
         cursor: pointer;
         margin: 0.5rem;
     }
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 12px;
+}
 
+    #myBtn:hover {
+        background-color: red;
+    }
