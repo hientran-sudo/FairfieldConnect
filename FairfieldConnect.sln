@@ -5,11 +5,6 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FairfieldConnect", "FairfieldConnect\FairfieldConnect.csproj", "{56B33A41-CA22-4544-AF89-E443153EE621}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B60D1B54-194B-48ED-8AD4-D7B67D414B48}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Downloads\ff.jpg = ..\..\..\..\Downloads\ff.jpg
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
