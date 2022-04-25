@@ -42,7 +42,7 @@ namespace FairfieldConnect
         /// </summary>
         public string EmailConfirmationUrl { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string email, string returnUrl)
+        public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
         {
             if (email == null)
             {
@@ -74,7 +74,7 @@ namespace FairfieldConnect
             }
 
             return Page();
-        }
+        }        
     }
 }
 

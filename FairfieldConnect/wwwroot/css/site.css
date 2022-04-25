@@ -140,3 +140,16 @@ a:hover {
     #myBtn:hover {
         background-color: red;
     }
+.rightnav {
+    overflow: hidden;
+}
+
+    .rightnav a {
+        float: right;
+        text-align: center;
+        padding-right: 16px;
+        text-decoration: none;
+    }
+    .rightnav i {
+        padding-right: 16px;
+    }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>@ViewData["Title"] - FairfieldConnect</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -60,8 +61,12 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="navbar-right ml-auto">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                     
+                    <div class="rightnav">
+                        <i class='fas fa-user-alt' style='font-size:24px'></i>
+                        
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                        <a asp-area="" asp-controller="Home" asp-action="">Profile</a>
                     </div>
                 </div>
             </div>
@@ -89,4 +94,5 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 

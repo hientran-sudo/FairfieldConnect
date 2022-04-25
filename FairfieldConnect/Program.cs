@@ -15,6 +15,8 @@ builder.Services.AddDefaultIdentity<FairfieldConnectUser>(options => options.Sig
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 //
+
+
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
