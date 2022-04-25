@@ -1,7 +1,9 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using FairfieldConnect.Data;
 using FairfieldConnect.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using FairfieldConnect.Services;
+using FairfieldConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("FairfieldConnectContextConnection");
@@ -12,6 +14,10 @@ builder.Services.AddDefaultIdentity<FairfieldConnectUser>(options => options.Sig
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+//
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+
 
 var app = builder.Build();
 
