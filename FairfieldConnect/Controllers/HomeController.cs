@@ -1,6 +1,8 @@
 ﻿using FairfieldConnect.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace FairfieldConnect.Controllers
 {
@@ -8,10 +10,12 @@ namespace FairfieldConnect.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -20,7 +24,7 @@ namespace FairfieldConnect.Controllers
         }
 
         public IActionResult Privacy()
-        {
+        {         
             return View();
         }
 

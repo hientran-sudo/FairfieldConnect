@@ -30,13 +30,13 @@ namespace FairfieldConnect
 
         public async Task Execute(string apiKey, string subject, string message, string toEmail)
         {
-            var client = new SendGridClient(apiKey);
+            var client = new SendGridClient(Options.SendGridKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("Joe@contoso.com", "Password Recovery"),
-                Subject = subject,
-                PlainTextContent = message,
-                HtmlContent = message
+                From = new EmailAddress("hien.tran@student.fairfield.edu", "Registration"),
+                Subject = "Fairfield Connect Account Confirmation",
+                PlainTextContent = "Thank you for joining us. Please click on the link below to confirm your account registration!",
+                HtmlContent = "Thank you for joining us. Please click on the link below to confirm your account registration!"
             };
             msg.AddTo(new EmailAddress(toEmail));
 
