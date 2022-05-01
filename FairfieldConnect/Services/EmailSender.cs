@@ -35,8 +35,8 @@ namespace FairfieldConnect
             {
                 From = new EmailAddress("hien.tran@student.fairfield.edu", "Registration"),
                 Subject = "Fairfield Connect Account Confirmation",
-                PlainTextContent = "Thank you for joining us. Please click on the link below to confirm your account registration!",
-                HtmlContent = "Thank you for joining us. Please click on the link below to confirm your account registration!"
+                PlainTextContent = message,
+                HtmlContent = message
             };
             msg.AddTo(new EmailAddress(toEmail));
 
