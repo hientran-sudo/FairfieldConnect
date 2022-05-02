@@ -140,26 +140,3 @@ a:hover {
     #myBtn:hover {
         background-color: red;
     }
-.rightnav {
-    overflow: hidden;
-}
-
-    .rightnav a {
-        float: right;
-        text-align: center;
-        padding-right: 16px;
-        text-decoration: none;
-        font-size:20px;
-        color: grey
-        
-    }
-.rightnav a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-    .rightnav i {
-        padding-right: 16px;
-    }
-
