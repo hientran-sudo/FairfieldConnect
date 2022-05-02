@@ -4,6 +4,7 @@ using FairfieldConnect.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FairfieldConnect.Migrations
 {
     [DbContext(typeof(FairfieldConnectContext))]
-    partial class FairfieldConnectContextModelSnapshot : ModelSnapshot
+    [Migration("20220502212452_Third")]
+    partial class Third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -576,9 +578,6 @@ namespace FairfieldConnect.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ThumbnailID"), 1L, 1);
 
-                    b.Property<int?>("ReviewID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ThumbnailName")
                         .HasColumnType("nvarchar(50)");
 
@@ -587,15 +586,12 @@ namespace FairfieldConnect.Migrations
 
                     b.HasKey("ThumbnailID");
 
-                    b.HasIndex("ReviewID");
-
                     b.ToTable("Thumbnails");
 
                     b.HasData(
                         new
                         {
                             ThumbnailID = 1,
-                            ReviewID = 1,
                             ThumbnailName = "House",
                             Title = "House"
                         });
@@ -929,15 +925,6 @@ namespace FairfieldConnect.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("FairfieldConnect.Models.Thumbnail", b =>
-                {
-                    b.HasOne("FairfieldConnect.Models.Review", "Review")
-                        .WithMany()
-                        .HasForeignKey("ReviewID");
-
-                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("FairfieldConnect.Models.TutoringPost", b =>

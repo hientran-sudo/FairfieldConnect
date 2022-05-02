@@ -186,6 +186,15 @@ public class FairfieldConnectContext : IdentityDbContext<FairfieldConnectUser>
                 CategoryID = 4,
             }
         );
+        builder.Entity<Thumbnail>().HasData(
+            new Thumbnail
+            {
+                ThumbnailID = 1,
+                Title = "House",
+                ThumbnailName= "House",
+                ReviewID = 1
+            }
+        );
 
     }
 }
