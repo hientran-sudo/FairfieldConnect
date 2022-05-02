@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("FairfieldConnectContextConnection");
 
-
 builder.Services.AddDbContext<FairfieldConnectContext>(options =>
     options.UseSqlServer(connectionString));
 
@@ -45,6 +44,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Internal}/{action=Index}/{id?}");
 app.MapRazorPages();
 app.Run();
