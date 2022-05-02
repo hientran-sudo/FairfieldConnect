@@ -241,8 +241,8 @@ namespace FairfieldConnect.Controllers
             if (context.Events != null && context.Clubs != null)
             {
                 ViewBag.Clubs = context.Clubs.ToList();
-                var ent = context.Events.Find(id);
-                return View(ent);
+                var e = context.Events.Find(id);
+                return View(e);
             }
             else
             {
@@ -250,18 +250,18 @@ namespace FairfieldConnect.Controllers
             }
         }
         [HttpPost]
-        public IActionResult EditEvent(Event ent)
+        public IActionResult EditEvent(Event e)
         {
             if (ModelState.IsValid && context.Events != null)
             {
-                context.Events.Update(ent);
+                context.Events.Update(e);
                 context.SaveChanges();
                 return RedirectToAction("Events");
             }
             else if (context.Events != null && context.Clubs != null)
             {
                 ViewBag.Clubs = context.Clubs.ToList();
-                return View(ent);
+                return View(e);
             }
             else
             {
