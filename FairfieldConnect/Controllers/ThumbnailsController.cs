@@ -43,12 +43,16 @@ namespace FairfieldConnect.Controllers
                 return NotFound();
             }
 
+            ViewBag.Reviews = _context.Reviews.ToList();
+            ViewBag.Students = _context.Students.ToList();
+            ViewBag.Landlords = _context.Landlords.ToList();
             return View(thumbnail);
         }
 
         // GET: Thumbnails/Create
         public IActionResult Create()
         {
+            ViewBag.Reviews = _context.Reviews.ToList();
             return View();
         }
 
@@ -57,7 +61,7 @@ namespace FairfieldConnect.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ThumbnailID,Title,ThumbnailName,ThumbnailFile")] Thumbnail thumbnail)
+        public async Task<IActionResult> Create([Bind("ThumbnailID,Title,ThumbnailName,ThumbnailFile","ReviewID")] Thumbnail thumbnail)
         {
             if (ModelState.IsValid)
             {
@@ -79,60 +83,14 @@ namespace FairfieldConnect.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(thumbnail);
+            else if (_context.Reviews != null)
+            {
+                ViewBag.Reviews = _context.Reviews.ToList();
+                return View(thumbnail);
+            }
+            
+            return View();
         }
-
-        // GET: Thumbnails/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var thumbnail = await _context.Thumbnails.FindAsync(id);
-            if (thumbnail == null)
-            {
-                return NotFound();
-            }
-            return View(thumbnail);
-        }
-
-        // POST: Thumbnails/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ThumbnailID,Title,ThumbnailName")] Thumbnail thumbnail)
-        {
-            if (id != thumbnail.ThumbnailID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(thumbnail);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ThumbnailExists(thumbnail.ThumbnailID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(thumbnail);
-        }
-
         // GET: Thumbnails/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

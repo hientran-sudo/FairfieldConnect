@@ -5,27 +5,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Thumbnail</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ThumbnailName)
-        </dt>*@
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ThumbnailName)
-        </dd>
-    </dl>
+<h3>Details</h3>
+<div class="row" style="width:800px">      
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>@Model.ThumbnailName</td>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td>@Model.Review.Title</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>@Model.Review.Desc</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>@Model.Review.Address</td>
+            </tr>            
+            <tr>
+                <td>Landlord:</td>
+                <td>@Model.Review.Landlord.Name</td>
+            </tr>
+            <tr>
+                <td>Reviewd by:</td>
+                <td>@Model.Review.Student.Name</td>
+            </tr>
+        </table>       
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ThumbnailID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

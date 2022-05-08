@@ -5,24 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Thumbnail</h4>
+<h3>Create Thumbnail</h3>
 <hr />
 <div class="row">
     <div>
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="ThumbnailName" class="control-label">Name</label>
-                <input asp-for="ThumbnailName" class="form-control" />
-                <span asp-validation-for="ThumbnailName" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="ThumbnailFile" class="control-label"></label>
                 <input asp-for="ThumbnailFile" accept="image/*"/>
                 <span asp-validation-for="ThumbnailName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewID">Review:</label>
+                <select asp-for="ReviewID" class="form-control"asp-items="@(new SelectList(ViewBag.Reviews, "ReviewID", "ReviewID"))">
+                <option value=""></option></select>
+                <span asp-validation-for="ReviewID" class="text-danger"></span>
             </div>
             
 
