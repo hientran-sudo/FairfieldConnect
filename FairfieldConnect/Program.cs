@@ -5,9 +5,15 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using FairfieldConnect.Services;
 using FairfieldConnect;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("FairfieldConnectContextConnection");
+
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AllowAnonymousToPage("/Private/PublicPage");
+});
 
 builder.Services.AddDbContext<FairfieldConnectContext>(options =>
     options.UseSqlServer(connectionString));
@@ -44,6 +50,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Internal}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 app.Run();

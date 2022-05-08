@@ -24,6 +24,7 @@
                         <td>@r.Desc</td>
                         <td>
                             <a asp-controller="Housing" asp-action="ReviewDetails" asp-route-id=@r.ReviewID class="btn btn-info"> Details </a>
+                            <a asp-controller = "Thumbnails" asp-action="Create"asp-route-id=@r.ReviewID class="btn btn-info"> Add Photos </a>
                             <a asp-controller="Housing" asp-action="EditReview" asp-route-id=@r.ReviewID class="btn btn-info"> Edit </a>
                             <a asp-controller="Housing" asp-action="DeleteReview" asp-route-id="@r.ReviewID" class="btn btn-info"> Delete </a>                              
                         </td>
